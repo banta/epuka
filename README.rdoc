@@ -1,5 +1,0 @@
-Credit: Bernard Banta banta.bernard@gmail.com
-
-
-scripts
-INSERT INTO 'diseases' ('name', 'location', 'latitude', 'longitude', 'reported_cases', 'transmission_mode', 'signs', 'more_info', 'created_at', 'updated_at') VALUES ('Cholera', 'Kakamega, Kenya', 345678, 45678, '13', 'Lack of hygine', 'Bloody urine', 'Cholera is a disease that introduces harmful backteria in your body', 1-5-2012, 1-5-2012);
