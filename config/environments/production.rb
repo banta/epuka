@@ -69,7 +69,7 @@ Epuka::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
 #mails
-	config.action_mailer.default_url_options = { :host => 'example.com' }
+	config.action_mailer.default_url_options = { :host => 'epuka.herokuapp.com' }
 	# ActionMailer Config
 	# Setup for production - deliveries, no errors raised
 	config.action_mailer.delivery_method = :smtp
