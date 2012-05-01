@@ -12,8 +12,12 @@ gem "bootstrap-sass", ">= 2.0.1"
 gem 'simple_form'
 gem 'gmaps4rails'
 gem 'geocoder'
-gem 'pg'
+gem 'mysql2'
 gem 'thin'
+
+group :production do
+
+end
 
 
 group :assets do
