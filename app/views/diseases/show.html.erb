@@ -35,7 +35,7 @@
 					<h3>Nearby locations</h3>
 					<ul>
 					<% for disease in @disease.nearbys(10) %>
-						<li><%= link_to disease.location, disease %> (<%= disease.distance.round(2) %> miles)</li>
+						<li><%= link_to disease.location, disease %> <!--(<%#= disease.distance.round(2) %> miles)--></li>
 					<% end %>
 					</ul>
 				</p>
