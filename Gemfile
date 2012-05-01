@@ -13,6 +13,7 @@ gem 'simple_form'
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'pg'
+gem 'thin'
 
 
 group :assets do
