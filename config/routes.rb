@@ -1,4 +1,17 @@
 Epuka::Application.routes.draw do
+  resources :contacts, :only => [:index, :new, :create, :show, :destroy]
+
+  get "feed/rss"
+
+  resources :diseases
+
+  authenticated :user do
+  	root :to => 'home#index'
+	end
+
+  devise_for :users
+	resources :users, :only => [:show, :index]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +61,7 @@ Epuka::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

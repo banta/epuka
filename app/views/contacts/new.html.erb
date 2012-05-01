@@ -1,0 +1,4 @@
+<%- model_class = @contact.class -%>
+<h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
+                               :default => "#{model_class.model_name.human} Us") %></h1>
+<%= render :partial => 'form' %>

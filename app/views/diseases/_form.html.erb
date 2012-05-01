@@ -1,0 +1,22 @@
+<%= simple_form_for @disease, :html => { :class => 'form-horizontal' } do |f| %>
+	<%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :latitude %>
+  <%= f.input :longitude %>
+  <%= f.input :reported_cases %>
+  <%= f.input :transmission_mode %>
+  <%= f.input :signs %>
+  <%= f.input :more_info, :input_html => { :style => "height: 35px" } %>
+  <div class="form-actions">
+    <%= f.button :submit, "Create disease", :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                diseases_path, :class => 'btn' %>
+  </div>
+<% end %>
+
+<SCRIPT LANGUAGE="JavaScript">
+	document.getElementById("disease_latitude").disabled=true;
+	document.getElementById("disease_longitude").disabled=true;
+</SCRIPT>

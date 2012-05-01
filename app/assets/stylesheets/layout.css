@@ -1,0 +1,5 @@
+/* styles for layout */
+html,body{height:100%;}
+#wrap{min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -30px;}
+#main{overflow:auto;	padding-bottom:150px; /* this needs to be bigger than footer height*/}
+.footer{clear: both; height: 150px; padding-top: 10px; padding-bottom: 10px; color: #999999; position: relative; margin-top: -50px;}

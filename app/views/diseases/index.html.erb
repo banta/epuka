@@ -1,0 +1,45 @@
+<%- model_class = Disease.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr class="breadcrumb">
+			<th><%= model_class.human_attribute_name(:name) %></th>
+			<th><%= model_class.human_attribute_name(:location) %></th>
+			<th><%= model_class.human_attribute_name(:reported_cases) %></th>
+			<th><%= model_class.human_attribute_name(:transmission_mode) %></th>
+			<th><%= model_class.human_attribute_name(:signs) %></th>
+			<% if user_signed_in? %>
+      	<th><%=t '.actions', :default => t("helpers.actions") %></th>
+			<% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @diseases.each do |disease| %>
+      <tr>
+        <td><%= link_to disease.name, disease_path(disease) %></td>
+        <td><%= disease.location %></td>
+        <td><%= disease.reported_cases %></td>
+        <td><%= disease.transmission_mode %></td>
+        <td><%= disease.signs %></td>
+				<% if user_signed_in? %>
+		      <td>
+		        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+		                    edit_disease_path(disease), :class => 'btn btn-mini btn-success' %>
+
+						<% if current_user.has_role? :admin %>
+				      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+				                  disease_path(disease),
+				                  :method => :delete,
+				                  :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+				                  :class => 'btn btn-mini btn-danger' %>
+						<% end %>
+		      </td>
+				<% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_disease_path,
+            :class => 'btn btn-primary' %>

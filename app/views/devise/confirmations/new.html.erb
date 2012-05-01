@@ -1,0 +1,18 @@
+<h2>Resend confirmation instructions</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }, :html => { :class => 'form-horizontal' }) do |f| %>
+  <% if f.error_notification %>
+    <div class="alert alert-error fade in">
+			<a class="close" data-dismiss="alert">×</a>
+      <%= f.error_notification %>
+    </div>
+	<% end %>
+
+  <%= f.input :email %>
+
+	<div class="form-actions">
+    <%= f.button :submit, "Resend confirmation instructions", :class => 'btn-primary' %>
+  </div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
