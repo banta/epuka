@@ -5,7 +5,7 @@
 			<h1><%=t '.title', :default => model_class.model_name.human %></h1>
 			<div class="row-fluid">
 
-			<div class="span5">
+			<div class="span4">
 				<p>
 					<strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
 					<%= @disease.name %>
@@ -41,8 +41,8 @@
 				</p>
 			</div>
 
-			<div class="span7">
-				<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=8&markers=#{@disease.latitude}%2C#{@disease.longitude}" %>
+			<div class="span8">
+				<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=8&markers=#{@disease.latitude}%2C#{@disease.longitude}", :class => "map-img" %>
 			</div>
 			</div>
 		</div>
