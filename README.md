@@ -4,5 +4,5 @@ Epuka
 Epuka is a disease reporting system.
 
 
-Credit: <b>Bernard Banta - banta.bernard@gmail.com </b>
+Credit: Bernard Banta - banta.bernard@gmail.com <br>
         cliff Anami - cliffmoffitt@yahoo.com
