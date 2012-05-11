@@ -9,3 +9,35 @@ html,body{height:100%;}
     vertical-align: middle;
 }
 .footer{clear: both; height: 150px; padding-top: 10px; padding-bottom: 10px; color: #999999; position: relative; margin-top: -50px;}
+
+.footer > span {
+    height: 4px;
+    position: absolute;
+    top: 0;
+    width: 20%;
+}
+
+footer > .f1 {
+    background: none repeat scroll 0 0 #F3A01E;
+    left: 0;
+}
+
+.footer > .f2 {
+    background: none repeat scroll 0 0 #D05D2A;
+    left: 20%;
+}
+
+.footer > .f3 {
+    background: none repeat scroll 0 0 #9DC425;
+    left: 40%;
+}
+
+.footer > .f4 {
+    background: none repeat scroll 0 0 #4B8DB5;
+    left: 60%;
+}
+
+.footer > .f5 {
+    background: none repeat scroll 0 0 #7C48B5;
+    left: 80%;
+}
