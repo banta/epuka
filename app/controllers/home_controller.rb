@@ -6,4 +6,7 @@ class HomeController < ApplicationController
       @json = Disease.all.to_gmaps4rails
     end
   end
+
+	def gallery
+	end
 end

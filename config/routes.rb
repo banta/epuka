@@ -2,12 +2,15 @@ Epuka::Application.routes.draw do
   resources :contacts, :only => [:index, :new, :create, :show, :destroy]
 
   get "feed/rss"
+	get "home/gallery"
 
   resources :diseases
 
   authenticated :user do
   	root :to => 'home#index'
 	end
+
+
 
   devise_for :users
 	resources :users, :only => [:show, :index]
