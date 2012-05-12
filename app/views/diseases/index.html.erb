@@ -7,7 +7,6 @@
 			<th><%= model_class.human_attribute_name(:location) %></th>
 			<th><%= model_class.human_attribute_name(:reported_cases) %></th>
 			<th><%= model_class.human_attribute_name(:transmission_mode) %></th>
-			<th><%= model_class.human_attribute_name(:signs) %></th>
 			<% if user_signed_in? %>
       	<th><%=t '.actions', :default => t("helpers.actions") %></th>
 			<% end %>
@@ -20,7 +19,6 @@
         <td><%= disease.location %></td>
         <td><%= disease.reported_cases %></td>
         <td><%= disease.transmission_mode %></td>
-        <td><%= disease.signs %></td>
 				<% if user_signed_in? %>
 		      <td>
 		        <%= link_to t('.edit', :default => t("helpers.links.edit")),
