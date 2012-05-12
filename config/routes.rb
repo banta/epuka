@@ -4,7 +4,7 @@ Epuka::Application.routes.draw do
   resources :diseases
 	resources :home, :only => [:index]
 	resources :contacts, :only => [:index, :new, :create, :show, :destroy]
-	resources :feed, :only => [:rss]
+	get "feed/rss"
 
   authenticated :user do
   	root :to => 'home#index'
