@@ -5,14 +5,17 @@
 		  <%= link_to('Diseases', diseases_path)  %>
 		  </li>
 			<li>
-			<a data-toggle="modal" href="#myModal">Gallery</a>
+				<a data-toggle="modal" href="#myModal">Gallery</a>
+			</li>
+			<li>
+				<a href="https://github.com/Banta/epuka"title="Contribute" target="_blank">Contribute</a>
 			</li>
 			<li>
 		  <%= link_to('Contact Us', new_contact_path)  %>
 		  </li>
 		<% if user_signed_in? %>
 		  <li>
-		  <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+		  	<%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
 		  </li>
 		<% else %>
 		  <li>
@@ -30,12 +33,12 @@
 		  <% end %>
 		<% else %>
 		  <li>
-		  <%= link_to('Sign up', new_user_registration_path)  %>
+		  	<%= link_to('Sign up', new_user_registration_path)  %>
 		  </li>
 		<% end %>
 			<li>
 				<%= form_tag root_path, :class=>"navbar-search pull-left", :method => :get do %>
-					<%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Search the map" %>
+					<%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Search the location" %>
 				<% end %>
 			</li>
 	</ul>
