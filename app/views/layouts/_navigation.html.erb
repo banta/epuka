@@ -13,6 +13,11 @@
 			<li>
 		  <%= link_to('Contact Us', new_contact_path)  %>
 		  </li>
+	</ul>
+	<%= form_tag root_path, :class=>"navbar-search pull-left", :method => :get do %>
+					<%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Search the location" %>
+	<% end %>
+	<ul class="nav pull-right">
 		<% if user_signed_in? %>
 		  <li>
 		  	<%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
@@ -36,10 +41,5 @@
 		  	<%= link_to('Sign up', new_user_registration_path)  %>
 		  </li>
 		<% end %>
-			<li>
-				<%= form_tag root_path, :class=>"navbar-search pull-left", :method => :get do %>
-					<%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Search the location" %>
-				<% end %>
-			</li>
 	</ul>
 </div>
