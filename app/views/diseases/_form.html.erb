@@ -1,12 +1,12 @@
 <%= simple_form_for @disease, :html => { :class => 'form-horizontal' } do |f| %>
 	<%= f.error_notification %>
 
-  <%= f.input :name %>
-  <%= f.input :location %>
-  <%= f.input :reported_cases %>
-  <%= f.input :transmission_mode %>
-  <%= f.input :signs %>
-  <%= f.input :more_info, :input_html => { :style => "height: 35px" } %>
+  <%= f.input :name, :placeholder=>"e.g. Malaria" %>
+  <%= f.input :location, :placeholder=>"e.g Rongai, Nairobi, Kenya" %>
+  <%= f.input :reported_cases, :placeholder=>"e.g. 12" %>
+  <%= f.input :transmission_mode, :placeholder=>"e.g. Mosquito, air" %>
+  <%= f.input :signs, :placeholder=>"e.g. Paining joins, headache" %>
+  <%= f.input :more_info, :placeholder=>"Add more information about the disease here", :input_html => { :style => "height: 35px" } %>
   <div class="form-actions">
     <%= f.button :submit, "Create disease", :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
