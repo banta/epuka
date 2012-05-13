@@ -1,0 +1,11 @@
+<%= simple_form_for @domain, :html => { :class => 'form-horizontal' } do |f| %>
+	<%= f.error_notification %>
+
+  <%= f.input :name, :placeholder => "e.g. gmail.com" %>
+  <%= f.input :more_info, :placeholder => "more info about the organization", :input_html => { :style => "height: 35px" } %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                domains_path, :class => 'btn' %>
+  </div>
+<% end %>

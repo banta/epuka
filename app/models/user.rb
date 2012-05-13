@@ -11,6 +11,17 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 	has_many :diseases
 	has_many :blogs
+	has_many :domains
+
 	validates_presence_of :name
 	validates_uniqueness_of :name, :email, :case_sensitive => false
+
+	validate :email_domain_registration
+
+	private
+	def email_domain_registration
+		domain = email.split('@') #split string with “@”
+    errors.add(:email, "domain not registered. Contact admin") if
+      Domain.find_by_name(domain[1].to_s).nil? == true
+  end
 end

@@ -1,0 +1,33 @@
+<%- model_class = @domain.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<div class="well" >
+	<p>
+		<strong><%= model_class.human_attribute_name(:registered_by) %>:</strong><br>
+		<%= User.find(@domain.user_id).name %>
+	</p>
+	<p>
+		<strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
+		<%= @domain.name %>
+	</p>
+	<p>
+		<strong><%= model_class.human_attribute_name(:more_info) %>:</strong><br>
+		<%= @domain.more_info %>
+	</p>
+</div>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              domains_path, :class => 'btn btn-primary'  %>
+	<% if user_signed_in? %>
+			<% if current_user.has_role? :admin %>
+				<%= link_to t('.edit', :default => t("helpers.links.edit")),
+						        edit_domain_path(@domain), :class => 'btn' %>
+				<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+						        domain_path(@domain),
+						        :method => 'delete',
+						        :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+						        :class => 'btn btn-danger' %>
+		<% end %>
+	<% end %>
+</div>
