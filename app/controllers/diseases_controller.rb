@@ -88,10 +88,4 @@ class DiseasesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-	private
-
-  def only_allow_admin
-    redirect_to root_path, :alert => 'Only an administrator is authorized.' unless current_user.has_role? :admin
-  end
 end
