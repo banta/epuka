@@ -1,0 +1,27 @@
+<%- model_class = Post.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1><br/><br/>
+
+<% if user_signed_in? %>
+	<p>
+	<%= link_to t('.new', :default => t("helpers.links.new")),
+			        new_post_path,
+			        :class => 'btn btn-primary' %>
+	</p>
+<% end %>
+
+<% @posts.each do |post| %>
+	<div class="alert-info well">
+	<a class="close" data-dismiss="alert">×</a>
+	<strong><%= link_to post.title, post_path(post) %><%= " By "%> <%= User.find(post.user_id).name %></strong><br/>
+	<%= post.content %><br/><br/>
+	<%=l post.created_at %>
+	</div>
+<% end %><br/>
+
+<% if user_signed_in? %>
+	<p>
+		<%= link_to t('.new', :default => t("helpers.links.new")),
+			        new_post_path,
+			        :class => 'btn btn-primary' %>
+	</p>
+<% end %>
