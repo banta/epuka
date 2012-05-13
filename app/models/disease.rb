@@ -1,6 +1,8 @@
 class Disease < ActiveRecord::Base
 	acts_as_gmappable
   attr_accessible :latitude, :location, :longitude, :more_info, :name, :reported_cases, :signs, :transmission_mode
+
+	belongs_to :user
 	validates_presence_of :name
 	validates_uniqueness_of :name
 

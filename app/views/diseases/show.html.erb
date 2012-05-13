@@ -3,47 +3,53 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<h1><%=t '.title', :default => model_class.model_name.human %></h1>
-			<div class="row-fluid">
+				<div class="row-fluid">
 
-			<div class="span4">
-				<p>
-					<strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
-					<%= @disease.name %>
-				</p>
-				<p>
-					<strong><%= model_class.human_attribute_name(:location) %>:</strong><br>
-					<%= @disease.location %>
-				</p>
-				<p>
-					<strong><%= model_class.human_attribute_name(:reported_cases) %>:</strong><br>
-					<%= @disease.reported_cases %>
-				</p>
-				<p>
-					<strong><%= model_class.human_attribute_name(:transmission_mode) %>:</strong><br>
-					<%= @disease.transmission_mode %>
-				</p>
-				<p>
-					<strong><%= model_class.human_attribute_name(:signs) %>:</strong><br>
-					<%= @disease.signs %>
-				</p>
-				<p>
-					<strong><%= model_class.human_attribute_name(:more_info) %>:</strong><br>
-					<%= @disease.more_info %>
-				</p>
+				<div class="span4">
+					<p>
+						<strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
+						<%= @disease.name %>
+					</p>
+					<p>
+						<strong><%= model_class.human_attribute_name(:location) %>:</strong><br>
+						<%= @disease.location %>
+					</p>
+					<p>
+						<strong><%= model_class.human_attribute_name(:reported_cases) %>:</strong><br>
+						<%= @disease.reported_cases %>
+					</p>
+					<p>
+						<strong><%= model_class.human_attribute_name(:transmission_mode) %>:</strong><br>
+						<%= @disease.transmission_mode %>
+					</p>
+					<p>
+						<strong><%= model_class.human_attribute_name(:signs) %>:</strong><br>
+						<%= @disease.signs %>
+					</p>
+					<p>
+						<strong><%= model_class.human_attribute_name(:more_info) %>:</strong><br>
+						<%= @disease.more_info %>
+					</p>
 
-				<p>
-					<h3>Nearby locations</h3>
-					<ul>
-					<% for disease in @disease.nearbys(10) %>
-						<li><%= link_to disease.location, disease %> <!--(<%#= disease.distance.round(2) %> miles)--></li>
-					<% end %>
-					</ul>
-				</p>
-			</div>
+					<p>
+						<h3>Nearby locations</h3>
+						<ul>
+						<% for disease in @disease.nearbys(10) %>
+							<li><%= link_to disease.location, disease %> <!--(<%#= disease.distance.round(2) %> miles)--></li>
+						<% end %>
+						</ul>
+					</p>
+				</div>
 
-			<div class="span8">
-				<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=8&markers=#{@disease.latitude}%2C#{@disease.longitude}", :class => "map-img" %>
-			</div>
+				<div class="span8">
+					<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=8&markers=#{@disease.latitude}%2C#{@disease.longitude}", :class => "map-img" %>
+					<p>
+					<strong><%= model_class.human_attribute_name(:reported_by) %>:</strong><br>
+						<%= User.find(@disease.user_id).name %><strong>
+						<%= " On " %>:</strong>
+						<%= @disease.created_at %>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>

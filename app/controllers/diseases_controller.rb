@@ -48,6 +48,7 @@ class DiseasesController < ApplicationController
   # POST /diseases.json
   def create
     @disease = Disease.new(params[:disease])
+		@disease.user_id = current_user
 
     respond_to do |format|
       if @disease.save
