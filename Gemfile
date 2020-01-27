@@ -11,7 +11,7 @@ gem "rolify", ">= 3.1.0"
 gem "bootstrap-sass", ">= 2.0.1"
 gem 'simple_form'
 gem 'gmaps4rails'
-gem 'geocoder'
+gem 'geocoder', '>= 1.6.1'
 gem 'pg'
 gem 'thin'
 
