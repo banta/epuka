@@ -82,7 +82,7 @@ GEM
       factory_girl (~> 3.2.0)
       railties (>= 3.0.0)
     ffi (1.0.11)
-    geocoder (1.1.1)
+    geocoder (1.6.1)
     gherkin (2.9.3)
       json (>= 1.4.6)
     gmaps4rails (1.4.8)
@@ -211,7 +211,7 @@ DEPENDENCIES
   devise (>= 2.1.0.rc)
   email_spec (>= 1.2.1)
   factory_girl_rails (>= 3.1.0)
-  geocoder
+  geocoder (>= 1.6.1)
   gmaps4rails
   jquery-rails
   launchy (>= 2.1.0)
@@ -224,3 +224,6 @@ DEPENDENCIES
   thin
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
+
+BUNDLED WITH
+   1.17.3
