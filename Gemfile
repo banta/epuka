@@ -4,7 +4,7 @@ gem 'rails', '3.2.3'
 
 #gem 'sqlite3'
 gem "devise", ">= 2.1.0.rc"
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 3.1.3'
 
 gem "cancan", ">= 1.6.7"
 gem "rolify", ">= 3.1.0"
