@@ -1,30 +1,30 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '4.0.0'
 
 #gem 'sqlite3'
-gem "devise", ">= 2.1.0.rc"
+gem "devise", ">= 3.0.0"
 gem 'jquery-rails'
 
 gem "cancan", ">= 1.6.7"
 gem "rolify", ">= 3.1.0"
 gem "bootstrap-sass", ">= 2.0.1"
-gem 'simple_form'
+gem 'simple_form', '>= 3.0.0'
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'pg'
 gem 'thin'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.0.3'
 	gem 'twitter-bootstrap-rails'
 end
 
 group :development, :test do
-	gem "rspec-rails", ">= 2.9.0.rc2"
-	gem "factory_girl_rails", ">= 3.1.0"
+	gem "rspec-rails", ">= 2.9.0"
+	gem "factory_girl_rails", ">= 3.2.0"
 end
 
 group :test do
