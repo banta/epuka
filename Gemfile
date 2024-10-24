@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '6.1.7.9'
 
 #gem 'sqlite3'
 gem "devise", ">= 2.1.0.rc"
@@ -16,10 +16,10 @@ gem 'pg'
 gem 'thin'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '~> 6.0.0'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-	gem 'twitter-bootstrap-rails'
+	gem 'twitter-bootstrap-rails', '>= 2.1.6'
 end
 
 group :development, :test do
