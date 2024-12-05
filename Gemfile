@@ -29,7 +29,7 @@ end
 
 group :test do
 	gem "email_spec", ">= 1.2.1"
-	gem "cucumber-rails", ">= 1.3.0", :require => false
+	gem "cucumber-rails", ">= 3.0.0", :require => false
 	gem "database_cleaner", ">= 0.7.2"
 	gem "capybara", ">= 1.1.2"
 	gem "launchy", ">= 2.1.0"
